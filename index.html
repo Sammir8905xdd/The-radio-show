@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Radio Show</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <script src="https://sdk.scdn.co/spotify-player.js"></script>
+</head>
+<body>
+  <div class="backdrop-blur">
+    <video id="background-video" autoplay loop muted>
+      <source src="/02_Black-Lightning.webm" type="video/webm">
+      Your browser does not support the video tag.
+    </video>
+    <div id="background-svg"></div>
+    
+    <button class="settings-button animate__animated animate__fadeIn" id="settings-button">
+      <span>⚙️</span>
+    </button>
+    
+    <div id="settings-modal" class="settings-modal">
+      <div class="settings-content animate__animated animate__fadeInDown">
+        <span class="close-modal">&times;</span>
+        <h2>Settings</h2>
+        <div class="theme-options">
+          <label>
+            <input type="radio" name="theme" value="dark" checked>
+            <span>Dark Theme</span>
+          </label>
+          <label>
+            <input type="radio" name="theme" value="light">
+            <span>Light Theme</span>
+          </label>
+          <label>
+            <input type="radio" name="theme" value="custom">
+            <span>Custom Theme</span>
+          </label>
+        </div>
+        <div class="custom-color-input">
+          <label for="custom-color">Custom Color:</label>
+          <input type="color" id="custom-color" value="#000000">
+        </div>
+      </div>
+    </div>
+
+    <div class="container animate__animated animate__fadeIn">
+      <div class="logo-container">
+        <img src="THE RADIO SHOW logo.png" alt="The Radio Show Logo" class="logo">
+      </div>
+      
+      <div class="language-selector">
+        <select id="language-select">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+        </select>
+      </div>
+
+      <div class="player">
+        <audio id="audioPlayer" controls></audio>
+        <div class="song-info animate__animated animate__fadeIn">
+          <div id="now-playing">Now Playing</div>
+          <div id="song-title"></div>
+        </div>
+        <div class="playlist-container">
+          <ul id="playlist">
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
